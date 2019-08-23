@@ -10,6 +10,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>BlazorScopedCss</AssemblyName>
+    <Authors>Alexandre Reyes Martins</Authors>
+    <Company />
+    <PackageTags>Blazor;Scoped;Css</PackageTags>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <Version>0.0.1</Version>
+    <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
+    <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
+    <FileVersion>0.0.0.1</FileVersion>
   </PropertyGroup>
 
 
