@@ -1,4 +1,4 @@
-# Blazor Scope dCss
+# Blazor Scope Css
 BlazorScopedCss is a library to fill the css gap in current Blazor version.
 This is how it works:
 ![Hot it works](https://user-images.githubusercontent.com/729956/63617351-a1790880-c5bf-11e9-88bf-53b0b1fbc631.gif)
