@@ -3,3 +3,7 @@
 ################################################################################
 
 /SampleApp/obj
+/SampleApp/bin/Debug/netcoreapp3.0
+/src/obj
+/src/bin/Debug/netcoreapp3.0
+/.vs/BlazorScopedCss/v16
