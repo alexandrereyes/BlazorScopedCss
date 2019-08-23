@@ -40,3 +40,6 @@ This library will replace `-scopeId` by the componentId, so...if you don't put t
 ```
 
 That's it! Watch HTML `<style id="scopedCss">` tag to see the magic :)
+
+# Install
+https://www.nuget.org/packages/BlazorScopedCss
