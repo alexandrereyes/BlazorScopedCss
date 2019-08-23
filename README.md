@@ -1,10 +1,7 @@
 # BlazorScopedCss
 BlazorScopedCss is a library to fill the css gap in current Blazor version.
 This is how it works:
-![This is how it works](https://user-images.githubusercontent.com/729956/63616234-7d1c2c80-c5bd-11e9-9e88-3c01e8fcad5a.gif)
-
-
-
+![Hot it works](https://user-images.githubusercontent.com/729956/63617351-a1790880-c5bf-11e9-88bf-53b0b1fbc631.gif)
 
 # Getting started
 1. Dependency Injection time: go to `Startup.cs` `ConfigureServices` and add the line bellow:
