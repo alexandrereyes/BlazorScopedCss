@@ -1,5 +1,10 @@
 # BlazorScopedCss
-BlazorScopedCss is a library to fill the css gap in current Blazor version
+BlazorScopedCss is a library to fill the css gap in current Blazor version.
+This is how it works:
+![This is how it works](https://user-images.githubusercontent.com/729956/63616234-7d1c2c80-c5bd-11e9-9e88-3c01e8fcad5a.gif)
+
+
+
 
 # Getting started
 1. Dependency Injection time: go to `Startup.cs` `ConfigureServices` and add the line bellow:
@@ -11,7 +16,7 @@ BlazorScopedCss is a library to fill the css gap in current Blazor version
 
 4. Time to add the css! In the folder where your component or page is located, add the css file, `FetchData.razor.css` for example (Visual Studio will nest the file inside .razor, awesome!)
 
-5) Inside de CSS, add some classes:
+5. Inside de CSS, add some classes:
 ```
 .myFirstScopedComponent-scopeId {
     background-color: red;
@@ -24,9 +29,9 @@ BlazorScopedCss is a library to fill the css gap in current Blazor version
 
 This library will replace `-scopeId` by the componentId, so...if you don't put this keyword it will not work!
 
-6) Select the css in solution explorer and press f4 (properties), change the Build Action to `Embedded resource`
+6. Select the css in solution explorer and press f4 (properties), change the Build Action to `Embedded resource`
 
-67 Ok, now go to your .razor page or component, and add BazorScopedCss:
+7. Ok, now go to your .razor page or component, and add BazorScopedCss:
 ```
 <BlazorScopedCss.ScopedStyle EmbeddedStylePath="SampleApp.Pages.FetchData.razor.css"
                              AfterInit="@(() => StateHasChanged())"
