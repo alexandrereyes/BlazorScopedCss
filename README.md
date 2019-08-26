@@ -37,11 +37,13 @@ This library will replace `-scopeId` by the componentId, so...if you don't put t
 <BlazorScopedCss.ScopedStyle EmbeddedStylePath="SampleApp.Pages.FetchData.razor.css"
                              AfterInit="@(() => StateHasChanged())"
                              @ref="scopedStyle" />
+/* hint: If you don't want to provide the entire namespace in EmbeddedStylePath parameter, just add the parameter Parent="this", then you can write the parameter like this: EmbeddedStylePath="FetchData.razor.css" */
 
 <h1 class="@scopedStyle?.CssScopedClasses(scopedCssClasses: "myFirstScopedComponent")">Weather forecast</h1>
 
 <p class="@scopedStyle?.CssClassesMixed(nonScopedCssClasses: "display-1", scopedCssClasses: "mySecondScopedComponent")">This component demonstrates fetching data from a service.</p>
 ```
+
 
 That's it! Watch HTML `<style id="scopedCss">` tag to see the magic :)
 

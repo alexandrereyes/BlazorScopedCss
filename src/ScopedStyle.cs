@@ -31,7 +31,8 @@ namespace BlazorScopedCss
 
         /// <summary>
         /// Your css Embedded Path, for example: MyProject.MyNamespace.MyFile.css
-        /// Do not forget to set your css as "Embedded Resource" on Visual Studio build action
+        /// Do not forget to set your css as "Embedded Resource" on Visual Studio build action.
+        /// If you don't want to fill the entire namespace, for example only "MyFile.css", just provide the Parent parameter
         /// </summary>
         [Parameter]
         public string EmbeddedStylePath { get; set; }
@@ -41,6 +42,12 @@ namespace BlazorScopedCss
         /// </summary>
         [Parameter]
         public EventCallback AfterInit { get; set; }
+
+        /// <summary>
+        /// If you provide the parent, it'll be possible to provide EmbeddedStylePath without the entire namespace
+        /// </summary>
+        [Parameter]
+        public ComponentBase Parent { get; set; }
 
         #endregion
 
@@ -66,7 +73,7 @@ namespace BlazorScopedCss
                     throw new ArgumentException(nameof(EmbeddedStylePath));
                 }
 
-                await State.InitializeComponent(Id, EmbeddedStylePath);
+                await State.InitializeComponent(Id, EmbeddedStylePath, Parent);
                 if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
             }
         }

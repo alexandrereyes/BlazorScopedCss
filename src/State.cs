@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,10 +31,18 @@ namespace BlazorScopedCss
         /// <param name="componentId">Id of the component</param>
         /// <param name="embeddedCssPath">Embedded css path inside the assembly</param>
         /// <returns></returns>
-        internal async Task InitializeComponent(Guid componentId, string embeddedCssPath)
+        internal async Task InitializeComponent(Guid componentId, string embeddedCssPath, ComponentBase parent)
         {
             if (!_cssBag.Styles.TryGetValue(embeddedCssPath, out string css))
-                throw new ArgumentException($"Embedded css path {embeddedCssPath} not found. Did you set the build action of the file as EmbeddedResource on Visual Studio?");
+            {
+                if (parent != null)
+                    embeddedCssPath = $"{parent.GetType().Namespace}.{embeddedCssPath}";
+
+                if (!_cssBag.Styles.TryGetValue(embeddedCssPath, out css))
+                {
+                    throw new ArgumentException($"Embedded css path {embeddedCssPath} not found. Did you set the build action of the file as EmbeddedResource on Visual Studio?");
+                }
+            }
 
             _renderedStyles.Add(componentId, css);
 

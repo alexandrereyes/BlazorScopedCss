@@ -3,7 +3,8 @@
 @using SampleApp.Data
 @inject WeatherForecastService ForecastService
 
-<BlazorScopedCss.ScopedStyle EmbeddedStylePath="SampleApp.Pages.FetchData.razor.css"
+<BlazorScopedCss.ScopedStyle EmbeddedStylePath="FetchData.razor.css"
+                             Parent="this"
                              AfterInit="@(() => StateHasChanged())"
                              @ref="scopedStyle" />
 
