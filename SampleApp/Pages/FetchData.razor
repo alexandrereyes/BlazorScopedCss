@@ -5,7 +5,7 @@
 
 <BlazorScopedCss.ScopedStyle EmbeddedStylePath="FetchData.razor.css"
                              Parent="this"
-                             AfterInit="@(() => StateHasChanged())"
+                             AfterInit="StateHasChanged"
                              @ref="scopedStyle" />
 
 @if (scopedStyle?.IsComplete ?? false)

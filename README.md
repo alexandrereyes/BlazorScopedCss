@@ -4,7 +4,7 @@ This is how it works:
 ![Hot it works](https://user-images.githubusercontent.com/729956/63617351-a1790880-c5bf-11e9-88bf-53b0b1fbc631.gif)
 
 ### How does it work in razor files?
-![image](https://user-images.githubusercontent.com/729956/63619418-fec38880-c5c4-11e9-844e-915be9eb5ea0.png)
+![image](https://user-images.githubusercontent.com/729956/63719736-ffa62580-c823-11e9-9138-3e0db85d534e.png)
 
 
 # Getting started
@@ -34,14 +34,17 @@ This library will replace `-scopeId` by the componentId, so...if you don't put t
 
 7. Ok, now go to your .razor page or component, and add BazorScopedCss:
 ```
-<BlazorScopedCss.ScopedStyle EmbeddedStylePath="SampleApp.Pages.FetchData.razor.css"
-                             AfterInit="@(() => StateHasChanged())"
+<BlazorScopedCss.ScopedStyle EmbeddedStylePath="FetchData.razor.css"
+                             Parent="this"
+                             AfterInit="StateHasChanged"
                              @ref="scopedStyle" />
-/* hint: If you don't want to provide the entire namespace in EmbeddedStylePath parameter, just add the parameter Parent="this", then you can write the parameter like this: EmbeddedStylePath="FetchData.razor.css" */
 
-<h1 class="@scopedStyle?.CssScopedClasses(scopedCssClasses: "myFirstScopedComponent")">Weather forecast</h1>
+@if (scopedStyle?.IsComplete ?? false)
+{
+    <h1 class="@scopedStyle.CssScopedClasses(scopedCssClasses: "myFirstScopedComponent")">Weather forecast</h1>
 
-<p class="@scopedStyle?.CssClassesMixed(nonScopedCssClasses: "display-1", scopedCssClasses: "mySecondScopedComponent")">This component demonstrates fetching data from a service.</p>
+    <p class="@scopedStyle.CssClassesMixed(nonScopedCssClasses: "display-1", scopedCssClasses: "mySecondScopedComponent")">This component demonstrates fetching data from a service.</p>
+}
 ```
 
 
