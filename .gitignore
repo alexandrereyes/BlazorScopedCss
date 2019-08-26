@@ -7,3 +7,4 @@
 /src/obj
 /src/bin/Debug/netcoreapp3.0
 /.vs/BlazorScopedCss/v16
+/SampleApp/bin/Release/netcoreapp3.0

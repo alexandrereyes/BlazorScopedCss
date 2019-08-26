@@ -58,6 +58,11 @@ namespace BlazorScopedCss
         /// </summary>
         public Guid Id { get; private set; } = Guid.NewGuid();
 
+        /// <summary>
+        /// If BlazorScopedCss finished rendering the style
+        /// </summary>
+        public bool IsComplete { get; set; }
+
         #endregion
 
         protected async override Task OnAfterRenderAsync()
@@ -74,6 +79,7 @@ namespace BlazorScopedCss
                 }
 
                 await State.InitializeComponent(Id, EmbeddedStylePath, Parent);
+                IsComplete = true;
                 if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
             }
         }

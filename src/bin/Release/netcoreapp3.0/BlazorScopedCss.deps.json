@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "BlazorScopedCss/0.0.2": {
+      "BlazorScopedCss/0.0.3": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.0.0-preview8.19405.7",
           "Microsoft.AspNetCore.Components.Web": "3.0.0-preview8.19405.7",
@@ -1251,7 +1251,7 @@
     }
   },
   "libraries": {
-    "BlazorScopedCss/0.0.2": {
+    "BlazorScopedCss/0.0.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

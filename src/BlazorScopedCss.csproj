@@ -13,14 +13,13 @@
     <Authors>Alexandre Reyes Martins</Authors>
     <Company />
     <PackageTags>Blazor;Scoped;Css</PackageTags>
-    <AssemblyVersion>0.0.0.2</AssemblyVersion>
-    <Version>0.0.2</Version>
+    <AssemblyVersion>0.0.0.3</AssemblyVersion>
+    <Version>0.0.3</Version>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.2</FileVersion>
-    <PackageReleaseNotes>0.0.0.2 - Added the paremeter Parent, with this, you don't need to provide the entire namespace in EmbeddedStylePath
-0.0.0.1 - First version</PackageReleaseNotes>
+    <FileVersion>0.0.0.3</FileVersion>
+    <PackageReleaseNotes>0.0.0.3 - Added the property IsComplete: If BlazorScopedCss finished rendering the style</PackageReleaseNotes>
   </PropertyGroup>
 
 
