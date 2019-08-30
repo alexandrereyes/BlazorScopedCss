@@ -13,13 +13,13 @@
     <Authors>Alexandre Reyes Martins</Authors>
     <Company />
     <PackageTags>Blazor;Scoped;Css</PackageTags>
-    <AssemblyVersion>0.0.0.3</AssemblyVersion>
-    <Version>0.0.3</Version>
+    <AssemblyVersion>0.0.0.4</AssemblyVersion>
+    <Version>0.0.4</Version>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.3</FileVersion>
-    <PackageReleaseNotes>0.0.0.3 - Added the property IsComplete: If BlazorScopedCss finished rendering the style</PackageReleaseNotes>
+    <FileVersion>0.0.0.4</FileVersion>
+    <PackageReleaseNotes>To faster rendererization, try to initialize the css on OnInitializedAsync event</PackageReleaseNotes>
   </PropertyGroup>
 
 

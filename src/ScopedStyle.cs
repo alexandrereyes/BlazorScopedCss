@@ -65,10 +65,8 @@ namespace BlazorScopedCss
 
         #endregion
 
-        protected async override Task OnAfterRenderAsync()
+        async Task Initialize()
         {
-            await base.OnAfterRenderAsync();
-
             if (!_isInitialized && ComponentContext.IsConnected)
             {
                 _isInitialized = true;
@@ -82,6 +80,26 @@ namespace BlazorScopedCss
                 IsComplete = true;
                 if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
             }
+        }
+
+        /// <summary>
+        /// Try to initialize on this event first
+        /// </summary>
+        /// <returns></returns>
+        protected async override Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+            await Initialize();
+        }
+
+        /// <summary>
+        /// If couldn't possible to initialize on OnInitializedAsync event, do it on this event
+        /// </summary>
+        /// <returns></returns>
+        protected async override Task OnAfterRenderAsync()
+        {
+            await base.OnAfterRenderAsync();
+            await Initialize();
         }
 
         /// <summary>
