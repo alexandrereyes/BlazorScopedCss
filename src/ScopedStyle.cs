@@ -8,16 +8,7 @@ namespace BlazorScopedCss
 {
     public class ScopedStyle : ComponentBase, IDisposable
     {
-        #region Vars
-
-        bool _isInitialized;
-
-        #endregion
-
         #region Injections
-
-        [Inject]
-        internal IComponentContext ComponentContext { get; set; }
 
         [Inject]
         internal State State { get; set; }
@@ -65,41 +56,22 @@ namespace BlazorScopedCss
 
         #endregion
 
-        async Task Initialize()
-        {
-            if (!_isInitialized && ComponentContext.IsConnected)
-            {
-                _isInitialized = true;
-
-                if (string.IsNullOrWhiteSpace(EmbeddedStylePath))
-                {
-                    throw new ArgumentException(nameof(EmbeddedStylePath));
-                }
-
-                await State.InitializeComponent(Id, EmbeddedStylePath, Parent);
-                IsComplete = true;
-                if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
-            }
-        }
-
         /// <summary>
-        /// Try to initialize on this event first
+        /// Initialize the component
         /// </summary>
         /// <returns></returns>
         protected async override Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            await Initialize();
-        }
+            
+            if (string.IsNullOrWhiteSpace(EmbeddedStylePath))
+            {
+                throw new ArgumentException(nameof(EmbeddedStylePath));
+            }
 
-        /// <summary>
-        /// If couldn't possible to initialize on OnInitializedAsync event, do it on this event
-        /// </summary>
-        /// <returns></returns>
-        protected async override Task OnAfterRenderAsync()
-        {
-            await base.OnAfterRenderAsync();
-            await Initialize();
+            await State.InitializeComponent(Id, EmbeddedStylePath, Parent);
+            IsComplete = true;
+            if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
         }
 
         /// <summary>

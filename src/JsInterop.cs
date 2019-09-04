@@ -11,7 +11,7 @@ namespace BlazorScopedCss
         public JsInterop(IJSRuntime jsRuntime)
             => _jsRuntime = jsRuntime;
 
-        internal async Task InnerHTML(string elementId, string value)
-            => await _jsRuntime.InvokeAsync<object>($"{jsName}.innerHTML", elementId, value);
+        internal async ValueTask InnerHTML(string elementId, string value)
+            => await _jsRuntime.InvokeVoidAsync($"{jsName}.innerHTML", elementId, value);
     }
 }

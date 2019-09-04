@@ -13,19 +13,19 @@
     <Authors>Alexandre Reyes Martins</Authors>
     <Company />
     <PackageTags>Blazor;Scoped;Css</PackageTags>
-    <AssemblyVersion>0.0.0.4</AssemblyVersion>
-    <Version>0.0.4</Version>
+    <AssemblyVersion>0.0.0.5</AssemblyVersion>
+    <Version>0.0.5</Version>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.4</FileVersion>
-    <PackageReleaseNotes>To faster rendererization, try to initialize the css on OnInitializedAsync event</PackageReleaseNotes>
+    <FileVersion>0.0.0.5</FileVersion>
+    <PackageReleaseNotes>Updates to preview 9</PackageReleaseNotes>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview8.19405.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview8.19405.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview9.19424.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview9.19424.4" />
   </ItemGroup>
 
 </Project>
