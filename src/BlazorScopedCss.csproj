@@ -14,12 +14,12 @@
     <Company />
     <PackageTags>Blazor;Scoped;Css</PackageTags>
     <AssemblyVersion>0.0.0.5</AssemblyVersion>
-    <Version>0.0.5</Version>
+    <Version>0.0.6</Version>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.5</FileVersion>
-    <PackageReleaseNotes>Updates to preview 9</PackageReleaseNotes>
+    <FileVersion>0.0.0.6</FileVersion>
+    <PackageReleaseNotes>IsComplete = false when disposed</PackageReleaseNotes>
   </PropertyGroup>
 
 

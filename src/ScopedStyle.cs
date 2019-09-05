@@ -104,6 +104,9 @@ namespace BlazorScopedCss
             => CssClassesMixed(null, scopedCssClasses);
 
         void IDisposable.Dispose()
-            => State.DisposeComponent(Id);
+        {
+            IsComplete = false;
+            State.DisposeComponent(Id);
+        }
     }
 }
