@@ -8,6 +8,12 @@ namespace BlazorScopedCss
 {
     public class ScopedStyle : ComponentBase, IDisposable
     {
+        #region Vars
+
+        string _id;
+
+        #endregion
+
         #region Injections
 
         [Inject]
@@ -40,6 +46,12 @@ namespace BlazorScopedCss
         [Parameter]
         public ComponentBase Parent { get; set; }
 
+        /// <summary>
+        /// If true (default), CSS scopeId will be replaced by Parent (required) GetType().Fullname
+        /// </summary>
+        [Parameter]
+        public bool ReuseCss { get; set; } = true;
+
         #endregion
 
         #region Props
@@ -47,7 +59,27 @@ namespace BlazorScopedCss
         /// <summary>
         /// This component unique id
         /// </summary>
-        public Guid Id { get; private set; } = Guid.NewGuid();
+        public string Id
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_id))
+                {
+                    if (ReuseCss && Parent != null)
+                    {
+                        _id = "-" + Parent.GetType().FullName.Replace(".", "-");
+                        var indexOf = _id.IndexOf("`");
+                        if (indexOf > -1) _id = _id.Substring(0, indexOf);
+                    }
+                    else
+                    {
+                        _id = Guid.NewGuid().ToString();
+                    }
+                }
+
+                return _id;
+            }
+        }
 
         /// <summary>
         /// If BlazorScopedCss finished rendering the style
@@ -63,13 +95,13 @@ namespace BlazorScopedCss
         protected async override Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            
+
             if (string.IsNullOrWhiteSpace(EmbeddedStylePath))
             {
                 throw new ArgumentException(nameof(EmbeddedStylePath));
             }
 
-            await State.InitializeComponent(Id, EmbeddedStylePath, Parent);
+            await State.InitializeComponent(this, EmbeddedStylePath, Parent);
             IsComplete = true;
             if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
         }
@@ -104,9 +136,6 @@ namespace BlazorScopedCss
             => CssClassesMixed(null, scopedCssClasses);
 
         void IDisposable.Dispose()
-        {
-            IsComplete = false;
-            State.DisposeComponent(Id);
-        }
+            => State.DisposeComponent(this);
     }
 }

@@ -13,7 +13,7 @@ namespace BlazorScopedCss
             _jsInterop = jsInterop;
             _configuration = configuration;
             _cssBag = cssBag;
-            _renderedStyles = new Dictionary<Guid, string>();
+            _renderedStyles = new Dictionary<string, string>();
         }
 
         #region Vars
@@ -21,7 +21,7 @@ namespace BlazorScopedCss
         readonly JsInterop _jsInterop;
         readonly Configuration _configuration;
         readonly CssBag _cssBag;
-        readonly Dictionary<Guid, string> _renderedStyles;
+        readonly Dictionary<string, string> _renderedStyles;
 
         #endregion
 
@@ -30,9 +30,15 @@ namespace BlazorScopedCss
         /// </summary>
         /// <param name="componentId">Id of the component</param>
         /// <param name="embeddedCssPath">Embedded css path inside the assembly</param>
-        /// <returns></returns>
-        internal async Task InitializeComponent(Guid componentId, string embeddedCssPath, ComponentBase parent)
+        /// <returns>Returns if has changed style tag</returns>
+        internal async Task<bool> InitializeComponent(ScopedStyle component, string embeddedCssPath, ComponentBase parent)
         {
+            if (component.ReuseCss && component.Parent != null)
+            {
+                if (_renderedStyles.ContainsKey(component.Id))
+                    return false;
+            }
+
             if (!_cssBag.Styles.TryGetValue(embeddedCssPath, out string css))
             {
                 if (parent != null)
@@ -44,7 +50,7 @@ namespace BlazorScopedCss
                 }
             }
 
-            _renderedStyles.Add(componentId, css);
+            _renderedStyles.Add(component.Id, css);
 
             await _jsInterop.InnerHTML(
                 _configuration.StyleHtmlTagName,
@@ -52,13 +58,20 @@ namespace BlazorScopedCss
                     .Select(s => s.Value.Replace(_configuration.CssSelectorToReplace, s.Key.ToString()))
                     .Aggregate((a, b) => $"{a} {b}")
             );
+
+            return true;
         }
 
         /// <summary>
         /// Dispose the component
         /// </summary>
         /// <param name="componentId"></param>
-        internal void DisposeComponent(Guid componentId)
-            => _renderedStyles.Remove(componentId);
+        internal void DisposeComponent(ScopedStyle component)
+        {
+            if (!component.ReuseCss || component.Parent == null)
+            {
+                _renderedStyles.Remove(component.Id);
+            }
+        }
     }
 }

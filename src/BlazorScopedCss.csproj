@@ -13,19 +13,24 @@
     <Authors>Alexandre Reyes Martins</Authors>
     <Company />
     <PackageTags>Blazor;Scoped;Css</PackageTags>
-    <AssemblyVersion>0.0.0.5</AssemblyVersion>
-    <Version>0.0.6</Version>
+    <AssemblyVersion>0.0.0.7</AssemblyVersion>
+    <Version>0.0.7</Version>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.6</FileVersion>
-    <PackageReleaseNotes>IsComplete = false when disposed</PackageReleaseNotes>
+    <FileVersion>0.0.0.7</FileVersion>
+    <PackageReleaseNotes>Implemented reuse of CSS</PackageReleaseNotes>
   </PropertyGroup>
 
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview9.19424.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview9.19424.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>
