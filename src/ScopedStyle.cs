@@ -88,21 +88,18 @@ namespace BlazorScopedCss
 
         #endregion
 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnInitializedAsync()
         {
-            await base.OnAfterRenderAsync(firstRender);
+            await base.OnInitializedAsync();
 
-            if (firstRender)
+            if (string.IsNullOrWhiteSpace(EmbeddedStylePath))
             {
-                if (string.IsNullOrWhiteSpace(EmbeddedStylePath))
-                {
-                    throw new ArgumentException(nameof(EmbeddedStylePath));
-                }
-
-                await State.InitializeComponent(this, EmbeddedStylePath, Parent);
-                IsComplete = true;
-                if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
+                throw new ArgumentException(nameof(EmbeddedStylePath));
             }
+
+            await State.InitializeComponent(this, EmbeddedStylePath, Parent);
+            IsComplete = true;
+            if (AfterInit.HasDelegate) await AfterInit.InvokeAsync(null);
         }
 
         /// <summary>
