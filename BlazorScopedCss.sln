@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorScopedCss", "src\BlazorScopedCss.csproj", "{1E57936F-9A25-4A13-B634-2DEA6F109A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{B876F079-9FFF-4445-AC4E-DB83275CB4AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp", "SampleApp\SampleApp.csproj", "{B876F079-9FFF-4445-AC4E-DB83275CB4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppWebAssembly", "SampleAppWebAssembly\SampleAppWebAssembly.csproj", "{17FB87F9-FE0A-4E15-A0CB-96B35ECC2841}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B876F079-9FFF-4445-AC4E-DB83275CB4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B876F079-9FFF-4445-AC4E-DB83275CB4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B876F079-9FFF-4445-AC4E-DB83275CB4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FB87F9-FE0A-4E15-A0CB-96B35ECC2841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FB87F9-FE0A-4E15-A0CB-96B35ECC2841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FB87F9-FE0A-4E15-A0CB-96B35ECC2841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FB87F9-FE0A-4E15-A0CB-96B35ECC2841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

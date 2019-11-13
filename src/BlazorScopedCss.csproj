@@ -8,24 +8,31 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>8</LangVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <RootNamespace>BlazorScopedCss</RootNamespace>
     <AssemblyName>BlazorScopedCss</AssemblyName>
     <Authors>Alexandre Reyes Martins</Authors>
     <Company />
-    <PackageTags>Blazor;Scoped;Css</PackageTags>
-    <AssemblyVersion>0.0.0.8</AssemblyVersion>
-    <Version>0.0.8</Version>
+    <PackageTags>Blazor Scoped Css</PackageTags>
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <FileVersion>0.0.0.8</FileVersion>
-    <PackageReleaseNotes>Updated to dotnet core 3 RTM</PackageReleaseNotes>
+    <PackageReleaseNotes>Compatibility with webassembly</PackageReleaseNotes>
+    <Version>0.0.11</Version>
   </PropertyGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- .js/.css files will be referenced via <script>/<link> tags; other content files will just be included in the app's 'dist' directory without any tags referencing them -->
+    <EmbeddedResource Include="wwwroot\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="wwwroot\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="wwwroot\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 
 </Project>
