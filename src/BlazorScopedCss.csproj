@@ -19,8 +19,8 @@
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <PackageReleaseNotes>Compatibility with webassembly</PackageReleaseNotes>
-    <Version>0.0.12</Version>
+    <PackageReleaseNotes>allow null on CssClassesMixed</PackageReleaseNotes>
+    <Version>0.0.13</Version>
   </PropertyGroup>
 
   <ItemGroup>

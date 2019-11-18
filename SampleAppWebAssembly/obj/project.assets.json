@@ -332,7 +332,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "BlazorScopedCss/0.0.12": {
+      "BlazorScopedCss/0.0.13": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1437,7 +1437,7 @@
         "version.txt"
       ]
     },
-    "BlazorScopedCss/0.0.12": {
+    "BlazorScopedCss/0.0.13": {
       "type": "project",
       "path": "../src/BlazorScopedCss.csproj",
       "msbuildProject": "../src/BlazorScopedCss.csproj"
@@ -1445,7 +1445,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "BlazorScopedCss >= 0.0.12",
+      "BlazorScopedCss >= 0.0.13",
       "Microsoft.AspNetCore.Blazor >= 3.0.0-preview9.19465.2",
       "Microsoft.AspNetCore.Blazor.Build >= 3.0.0-preview9.19465.2",
       "Microsoft.AspNetCore.Blazor.DevServer >= 3.0.0-preview9.19465.2",

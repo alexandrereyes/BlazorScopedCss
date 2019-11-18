@@ -117,6 +117,7 @@ namespace BlazorScopedCss
 
             cssClass.AddRange(
                 scopedCssClasses
+                    .Where(w => !string.IsNullOrWhiteSpace(w))
                     .Select(c => $"{c.Trim()}{Configuration.CssSelectorToReplace}".Replace(Configuration.CssSelectorToReplace, Id.ToString()))
             );
 
