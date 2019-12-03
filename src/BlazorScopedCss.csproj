@@ -19,13 +19,14 @@
     <Description>BlazorScopedCss is a library to fill the css gap in current Blazor version</Description>
     <PackageProjectUrl>https://github.com/alexandrereyes/BlazorScopedCss</PackageProjectUrl>
     <RepositoryUrl>https://github.com/alexandrereyes/BlazorScopedCss.git</RepositoryUrl>
-    <PackageReleaseNotes>allow null on CssClassesMixed</PackageReleaseNotes>
-    <Version>0.0.13</Version>
+    <PackageReleaseNotes>updated to .net 3.1</PackageReleaseNotes>
+    <Version>0.0.14</Version>
+    <AssemblyVersion>0.0.14.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>

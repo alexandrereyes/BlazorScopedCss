@@ -13,8 +13,8 @@
     <link href="css/site.css" rel="stylesheet" />
     <style id="scopedCss"></style>
 </head>
-<body>
-    <app>@(await Html.RenderComponentAsync<App>(RenderMode.Server))</app>
+<body style="display: flex;">
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
 
     <script src="_framework/blazor.server.js"></script>
     <script src="_content/BlazorScopedCss/jsInterop.js"></script>

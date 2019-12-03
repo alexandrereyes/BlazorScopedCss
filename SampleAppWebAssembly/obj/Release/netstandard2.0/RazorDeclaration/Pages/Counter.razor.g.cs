@@ -49,7 +49,7 @@ using SampleAppWebAssembly.Shared;
 #line default
 #line hidden
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
-    public class Counter : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
