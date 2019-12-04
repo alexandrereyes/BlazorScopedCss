@@ -23,7 +23,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "netstandard2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -31,7 +31,7 @@
           "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
-          "netstandard2.0": {
+          "netstandard2.1": {
             "projectReferences": {
               "C:\\Dev\\BlazorScopedCss\\src\\BlazorScopedCss.csproj": {
                 "projectPath": "C:\\Dev\\BlazorScopedCss\\src\\BlazorScopedCss.csproj"
@@ -46,31 +46,25 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
+        "netstandard2.1": {
           "dependencies": {
             "Microsoft.AspNetCore.Blazor": {
               "target": "Package",
-              "version": "[3.0.0-preview9.19465.2, )"
+              "version": "[3.1.0-preview4.19579.2, )"
             },
             "Microsoft.AspNetCore.Blazor.Build": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview9.19465.2, )"
+              "version": "[3.1.0-preview4.19579.2, )"
             },
             "Microsoft.AspNetCore.Blazor.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0-preview9.19465.2, )"
+              "version": "[3.1.0-preview4.19579.2, )"
             },
             "Microsoft.AspNetCore.Blazor.HttpClient": {
               "target": "Package",
-              "version": "[3.0.0-preview9.19465.2, )"
-            },
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
+              "version": "[3.1.0-preview4.19579.2, )"
             }
           },
           "imports": [
@@ -83,6 +77,17 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "NETStandard.Library.Ref",
+              "version": "[2.1.0, 2.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }

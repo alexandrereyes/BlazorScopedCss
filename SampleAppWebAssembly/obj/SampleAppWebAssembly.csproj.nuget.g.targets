@@ -4,9 +4,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)netstandard.library\2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('$(NuGetPackageRoot)netstandard.library\2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.mono\3.0.0-preview9.19462.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Mono.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.mono\3.0.0-preview9.19462.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Mono.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.devserver\3.0.0-preview9.19465.2\build\Microsoft.AspNetCore.Blazor.DevServer.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.devserver\3.0.0-preview9.19465.2\build\Microsoft.AspNetCore.Blazor.DevServer.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.build\3.0.0-preview9.19465.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Build.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.build\3.0.0-preview9.19465.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Build.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.mono\3.1.0-preview4.19578.1\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Mono.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.mono\3.1.0-preview4.19578.1\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Mono.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.devserver\3.1.0-preview4.19579.2\build\Microsoft.AspNetCore.Blazor.DevServer.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.devserver\3.1.0-preview4.19579.2\build\Microsoft.AspNetCore.Blazor.DevServer.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.blazor.build\3.1.0-preview4.19579.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Build.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.blazor.build\3.1.0-preview4.19579.2\build\netstandard1.0\Microsoft.AspNetCore.Blazor.Build.targets')" />
   </ImportGroup>
 </Project>
