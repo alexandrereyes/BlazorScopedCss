@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "BlazorScopedCss/0.0.14": {
+      "BlazorScopedCss/0.0.15": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.1.0",
           "Microsoft.AspNetCore.Components.Web": "3.1.0",
@@ -879,7 +879,7 @@
       }
     },
     ".NETStandard,Version=v2.0/": {
-      "BlazorScopedCss/0.0.14": {
+      "BlazorScopedCss/0.0.15": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.1.0",
           "Microsoft.AspNetCore.Components.Web": "3.1.0",
@@ -1232,7 +1232,7 @@
     }
   },
   "libraries": {
-    "BlazorScopedCss/0.0.14": {
+    "BlazorScopedCss/0.0.15": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

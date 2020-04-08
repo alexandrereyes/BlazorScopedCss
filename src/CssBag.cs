@@ -30,6 +30,7 @@ namespace BlazorScopedCss
 
             // initalize the styles bag
             Styles = embeddedCssAssembly.GetManifestResourceNames()
+                .Where(r => r.ToLower().EndsWith(".css"))
                 .Select(s =>
                 {
                     using Stream stream = embeddedCssAssembly.GetManifestResourceStream(s);
@@ -43,7 +44,6 @@ namespace BlazorScopedCss
                     };
 
                 })
-                .Where(r => r.Name.ToLower().EndsWith(".css"))
                 .ToDictionary(s => s.Name, s => s.Resource);
         }
     }

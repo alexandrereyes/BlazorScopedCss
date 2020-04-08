@@ -305,7 +305,7 @@
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "BlazorScopedCss/0.0.14": {
+      "BlazorScopedCss/0.0.15": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1115,7 +1115,7 @@
         "version.txt"
       ]
     },
-    "BlazorScopedCss/0.0.14": {
+    "BlazorScopedCss/0.0.15": {
       "type": "project",
       "path": "../src/BlazorScopedCss.csproj",
       "msbuildProject": "../src/BlazorScopedCss.csproj"
@@ -1123,7 +1123,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "BlazorScopedCss >= 0.0.14",
+      "BlazorScopedCss >= 0.0.15",
       "Microsoft.AspNetCore.Blazor >= 3.1.0-preview4.19579.2",
       "Microsoft.AspNetCore.Blazor.Build >= 3.1.0-preview4.19579.2",
       "Microsoft.AspNetCore.Blazor.DevServer >= 3.1.0-preview4.19579.2",
@@ -1208,18 +1208,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "NETStandard.Library.Ref",
-            "version": "[2.1.0, 2.1.0]"
-          }
-        ],
         "frameworkReferences": {
           "NETStandard.Library": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

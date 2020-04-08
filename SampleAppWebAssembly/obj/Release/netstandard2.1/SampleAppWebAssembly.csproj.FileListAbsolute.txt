@@ -91,3 +91,4 @@ C:\Dev\BlazorScopedCss\SampleAppWebAssembly\obj\Release\netstandard2.1\blazor\bl
 C:\Dev\BlazorScopedCss\SampleAppWebAssembly\bin\Release\netstandard2.1\dist\_framework\_bin\System.ComponentModel.DataAnnotations.dll
 C:\Dev\BlazorScopedCss\SampleAppWebAssembly\bin\Release\netstandard2.1\dist\_framework\_bin\WebAssembly.Bindings.dll
 C:\Dev\BlazorScopedCss\SampleAppWebAssembly\bin\Release\netstandard2.1\dist\_framework\_bin\WebAssembly.Net.Http.dll
+C:\Dev\BlazorScopedCss\SampleAppWebAssembly\obj\Release\netstandard2.1\SampleAppWebAssembly.csproj.CoreCompileInputs.cache
